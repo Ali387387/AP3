@@ -1,0 +1,83 @@
+<div class="container">
+  <div style="text-align: center;">
+    <h1 style="color: red;">Job Application Form</h1>
+  </div>
+  
+  <div >
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      
+      <div >
+        <div>
+          <h3 style="color: #008080;">Personal Info:</h3>
+          <label for="name">Name </label>
+          <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control" placeholder="Name">  
+        </div>
+        <div>
+          <label for="email">Email </label>
+          <input type="text" #email (ngModel)="email" name="email" id="email" class="form-control" placeholder="Email Address">  
+        </div>
+        <div>
+          <label for="phone">Phone Number </label>
+          <input type="text" #phone (ngModel)="phone" name="phone" id="phone" class="form-control" placeholder="Phone Number">  
+        </div>
+        <div>
+          <label for="address">Address </label>
+          <input type="address" #address (ngModel)="address" name="address" id="address" class="form-control" placeholder="Address">  
+        </div>
+        <div>
+          <h3 style="color:#008080;">Academic:</h3>
+          <label for="degree">Degree </label>
+          <input type="degree" #degree (ngModel)="degree" name="degree" id="degree" class="form-control" placeholder="Degree">  
+        </div>
+        <div>
+          <label for="institute">School </label>
+          <input type="institute" #institute (ngModel)="institute" name="institute" id="institute" class="form-control" placeholder="School Name">  
+        </div>
+        <div>
+          <h3 style="color: #008080;">Experience:</h3>
+          <label for="achievement">Achievement </label>
+          <input type="achievement" #achievement (ngModel)="achievement" name="achievement" id="achievement" class="form-control" placeholder="Achievement">  
+        </div>
+        <div>
+          <label for="experience">Experience </label>
+          <input type="experience" #experience (ngModel)="experience" name="experience" id="experience" class="form-control" placeholder="Experience Years">  
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Register" class="btn btn-primary w-100" style="background-color:#008080; border-color:#006400;">
+        </div>
+
+        
+      </div>
+    </form>
+  </div>
+  
+</div>
+<div class="mt-6" style="text-align: center;">
+  <h2 style="margin-top: 30px; color: red;">Records</h2>
+  <table class="table table-border">
+      <thead class="thead">
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone No.</th>
+              <th>Address</th>
+              <th>Degree</th>
+              <th>School</th>
+              <th>Achievement</th>
+              <th>Experiance</th>
+          </tr>
+      </thead>
+      <tbody class="tbody">
+          <tr *ngFor="let emp of empDetails">
+              <td>{{emp.name}}</td>
+              <td>{{emp.email}}</td>
+              <td>{{emp.phone}}</td>
+              <td>{{emp.address}}</td>
+              <td>{{emp.degree}}</td>
+              <td>{{emp.institute}}</td>
+              <td>{{emp.achievement}}</td>
+              <td>{{emp.experience}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
